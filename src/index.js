@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const serverConfig = require('./config/serverConfig');
 const connectDB = require('./config/dbConfig');
 
@@ -7,9 +7,15 @@ const connectDB = require('./config/dbConfig');
 const PORT = serverConfig.PORT;
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.text()); 
-app.use(bodyParser.urlencoded());
+
+// middlewares
+// app.use(bodyParser.json());
+// app.use(bodyParser.text());  
+// app.use(bodyParser.urlencoded());  
+
+app.use(express.json());
+app.use(express.text());
+app.use(express.urlencoded({extended : true}));
 
 
 app.listen(PORT, async () => {
