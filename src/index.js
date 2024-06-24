@@ -22,7 +22,7 @@ app.listen(PORT, async () => {
   await connectDB();
   console.log("Server started at PORT : ", PORT);
 });
-
+  
    
 // ip-address:PORT   -> socket address
 // localhost:3000   -> socket address
