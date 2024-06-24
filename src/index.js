@@ -4,10 +4,10 @@ const serverConfig = require('./config/serverConfig');
 const connectDB = require('./config/dbConfig');
 
 
-const PORT = serverConfig.PORT;
+const PORT = serverConfig.PORT; 
 const app = express();
 
-
+ 
 // middlewares
 // app.use(bodyParser.json());
 // app.use(bodyParser.text());  
