@@ -30,10 +30,6 @@ app.use('/carts', cartRouter);
 
 
 
-
-
-
-
 app.listen(PORT, async () => {
   await connectDB();
   console.log("Server started at PORT : ", PORT);
