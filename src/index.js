@@ -5,6 +5,7 @@ const connectDB = require('./config/dbConfig');
 const User = require('./schema/userSchema');
 const userRouter = require('./routes/userRoute');
 const cartRouter = require('./routes/cartRoute');
+const authRouter = require('./routes/authRoute');
 
 
 const PORT = serverConfig.PORT; 
@@ -27,6 +28,7 @@ app.use(express.urlencoded({extended : true}));
 // routing middlewares 
 app.use('/users', userRouter);
 app.use('/carts', cartRouter);
+app.use('/auth', authRouter);
 
 
 
@@ -44,3 +46,4 @@ app.listen(PORT, async () => {
 
  
 
+ 

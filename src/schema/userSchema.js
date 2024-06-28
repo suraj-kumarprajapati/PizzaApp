@@ -1,5 +1,7 @@
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
 
 const userSchema = mongoose.Schema({
 
@@ -46,5 +48,15 @@ const userSchema = mongoose.Schema({
 }, { timestamps : true });
 
 
+userSchema.pre('save', async function() {
+    console.log('before pre hook execution');
+    this.password = await bcrypt.hash(this.password, 10);
+    console.log(this);
+    console.log('after pre hook execution');
+});
+  
+
+
+
 const User = mongoose.model("User", userSchema);
-module.exports = User;
+module.exports = User; 
