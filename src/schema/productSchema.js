@@ -39,9 +39,9 @@ const productSchema = mongoose.Schema({
         default : true
     },
 
-    ingredients : {
-        type : [{name : String, quantity : Number}],
-    }
+    // ingredients : {
+    //     type : [{name : String, quantity : Number}],
+    // }
 }, {timestamps : true});
 
 
